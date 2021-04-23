@@ -12,7 +12,7 @@ from unidecode import unidecode
 from difflib import get_close_matches
 
 # Toggle wiki command & functionality on or off
-use_wiki_commands = True # toggle
+use_wiki_commands = false # toggle
 use_wikis = ["example", "iris", "vehiclesplus", "react"]  # specific toggle (included => on)
 if use_wiki_commands:
     try:
@@ -27,7 +27,7 @@ bot = commands.Bot(command_prefix=".", intents=discord.Intents.default(),
 
 load_dotenv()
 #token = os.getenv('token')
-token = "insert_token_here"
+token = "ODM1MTE3NDUwNTAwNTA1NjMw.YIKxuw.CcDXLj2JFGYWZmsfpIKslSzGBTM"
 
 logging.basicConfig(filename='console.log',
                     level=logging.INFO,
@@ -40,10 +40,10 @@ logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 async def on_ready():
     # Marks bot as running
     await bot.change_presence(activity=discord.Game('Reading your timing reports'))
-    logging.info('Connected to bot: {}'.format(bot.user.name))
+    logging.info('Bota bağlanıldı: {}'.format(bot.user.name))
     logging.info('Bot ID: {}'.format(bot.user.id))
-    logging.info('Bot fully loaded')
-    logging.info('Original creators: https://github.com/Pemigrade/botflop')
+    logging.info('Bot tamamen yüklendi')
+    logging.info('Bu botun asıl kodunu yazan: https://github.com/Pemigrade/botflop')
 
 @bot.event
 async def on_message(message):
@@ -66,10 +66,10 @@ async def on_message(message):
                     req = requests.post('https://bin.bloom.host/documents', data=text)
                     key = json.loads(req.content)['key']
                     response = "https://bin.bloom.host/" + key
-                    response += "\nRequested by " + message.author.mention
+                    response += "\nTalep eden kişi" + message.author.mention
                     if truncated:
-                        response += "\n(file was truncated because it was too long.)"
-                    embed_var = discord.Embed(title="Please use a paste service", color=0x1D83D4)
+                        response += "\n(dosya çok uzun olduğundan kesildi.)"
+                    embed_var = discord.Embed(title="Lütfen bir paste hizmeti kullanın", color=0x1D83D4)
                     embed_var.description = response
                     await message.channel.send(embed=embed_var)
     timings = bot.get_cog('Timings')
@@ -78,7 +78,7 @@ async def on_message(message):
 
 @bot.command()
 async def ping(ctx):
-    await ctx.send(f'Kahti bot ping is {round(bot.latency * 1000)}ms')
+    await ctx.send(f'Treas Timings Anlık Ping: {round(bot.latency * 1000)}ms')
 
 @bot.command()
 async def wiki(ctx, *args):
@@ -87,7 +87,7 @@ async def wiki(ctx, *args):
 
 @bot.command()
 async def invite(ctx):
-    await ctx.send('Invite me with this link:\nhttps://discord.com/oauth2/authorize?client_id=801178754772500500&permissions=0&scope=bot')
+    await ctx.send('Kendi sunucuna davet edebilmen için:\nhttps://discord.com/oauth2/authorize?client_id=835117450500505630&permissions=68608&scope=bot')
 
 """
 Used to get Iris wiki page index.

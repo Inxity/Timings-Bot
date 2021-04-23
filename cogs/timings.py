@@ -21,14 +21,14 @@ class Timings(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
-        self.TIMINGS_TITLE = "Timings Analysis"
+        self.TIMINGS_TITLE = "Timings Analizi"
 
     # TODO: Check Tuinity.yml for spawn rate changes
     async def analyze_timings(self, message):
         words = message.content.replace("\n", " ").split(" ")
         timings_url = ""
         embed_var = discord.Embed(title=self.TIMINGS_TITLE)
-        embed_var.set_footer(text=f"Please note that these options are generally going for the minimum. Adjust them to match your server. Requested by {message.author.name}#{message.author.discriminator}", icon_url=message.author.avatar_url)
+        embed_var.set_footer(text=f"Unutma, bu değerler en düşük değerler. Kendiniz sunucunuza göre ayarlayabilirsiniz. Bu analizi isteyen kişi {message.author.name}#{message.author.discriminator}", icon_url=message.author.avatar_url)
 
         for word in words:
             if word.startswith("https://timin") and "/d=" in word:
@@ -40,7 +40,7 @@ class Timings(commands.Cog):
             if word.startswith("https://www.spigotmc.org/go/timings?url=") or word.startswith(
                     "https://timings.spigotmc.org/?url="):
                 embed_var.add_field(name="❌ Spigot",
-                                    value="Spigot timings have limited information. Switch to [Paper](https://papermc.io/) for better timings analysis.")
+                                    value="Spigot Timings'i çok eski ve az detay içeriyor. Daha iyi bir Timings Analizi için[Paper](https://papermc.io/) kullan.")
                 embed_var.url = word
                 await message.reply(embed=embed_var)
                 return
@@ -63,8 +63,8 @@ class Timings(commands.Cog):
             async with session.get(timings_json) as response:
                 request = await response.json(content_type=None)
         if request is None or request_raw is None:
-            embed_var.add_field(name="❌ Invalid report",
-                                value="Create a new timings report.")
+            embed_var.add_field(name="❌ Geçersiz Timings",
+                                value="Yeni bir Timings oluştur, -/timings report.")
             await message.reply(embed=embed_var)
             return
 
@@ -77,11 +77,11 @@ class Timings(commands.Cog):
                     if version_result:
                         if compare_versions(version_result, TIMINGS_CHECK["version"]) == -1:
                             version = version.replace("git-", "").replace("MC: ", "")
-                            embed_var.add_field(name="❌ Outdated",
-                                                value=f'You are using `{version}`. Update to `{TIMINGS_CHECK["version"]}`.')
+                            embed_var.add_field(name="❌ Eski Versiyon",
+                                                value=f'Kullandığın versiyon: `{version}`. Lütfen şu versiyona yükseltin: `{TIMINGS_CHECK["version"]}`.')
                     else:
-                        embed_var.add_field(name="❗ Value Error",
-                                            value=f'Could not locate version from `{version}`')
+                        embed_var.add_field(name="❗ Değer Hatası",
+                                            value=f'Versiyonu anlayamadım, özel bir sürüm mü? `{version}`')
                 if "servers" in TIMINGS_CHECK:
                     for server in TIMINGS_CHECK["servers"]:
                         if server["name"] in version:
@@ -94,15 +94,15 @@ class Timings(commands.Cog):
                 timing_cost = int(request["timingsMaster"]["system"]["timingcost"])
                 if timing_cost > 300:
                     embed_var.add_field(name="❌ Timingcost",
-                                        value=f"Your timingcost is {timing_cost}. Your cpu is overloaded and/or slow. Find a better host.")
+                                        value=f"Timingcost'un {timing_cost}. CPU'n fazla yükleniyor veya yavaş. Daha iyi bir makineye geçebilirsin.")
             except KeyError as key:
                 logging.info("Missing: " + str(key))
 
             try:
                 jvm_version = request["timingsMaster"]["system"]["jvmversion"]
                 if jvm_version.startswith("1.8.") or jvm_version.startswith("9.") or jvm_version.startswith("10."):
-                    embed_var.add_field(name="❌ Java Version",
-                                        value=f"You are using Java {jvm_version}. Update to [Java 11](https://adoptopenjdk.net/installation.html).")
+                    embed_var.add_field(name="❌ Java Sürümü",
+                                        value=f"Kullandığın Java Sürümü {jvm_version}. [Java 11](https://adoptopenjdk.net/installation.html) Sürümüne geçin.")
             except KeyError as key:
                 logging.info("Missing: " + str(key))
 
@@ -113,7 +113,7 @@ class Timings(commands.Cog):
                     java_version = jvm_version.split(".")[0]
                     if int(java_version) < 14:
                         embed_var.add_field(name="❌ Java " + java_version,
-                                            value="ZGC should only be used on Java 15.")
+                                            value="ZGC Sadece Java 15'de kullanılmalı")
                     if "-Xmx" in flags:
                         max_mem = 0
                         flaglist = flags.split(" ")
@@ -125,19 +125,19 @@ class Timings(commands.Cog):
                                 max_mem = max_mem.replace("g", "000")
                                 max_mem = max_mem.replace("m", "")
                                 if int(max_mem) < 10000:
-                                    embed_var.add_field(name="❌ Low Memory",
-                                                        value="ZGC is only good with a lot of memory.")
+                                    embed_var.add_field(name="❌ Düşük Ram",
+                                                        value="ZGC sadece fazla ram ile düzgün çalışır")
                 elif "-Daikars.new.flags=true" in flags:
                     if "-XX:+PerfDisableSharedMem" not in flags:
-                        embed_var.add_field(name="❌ Outdated Flags",
-                                            value="Add `-XX:+PerfDisableSharedMem` to flags.")
+                        embed_var.add_field(name="❌ Eski Bayrak Kullanımı",
+                                            value="Bayraklarınıza `-XX:+PerfDisableSharedMem` ekleyin.")
                     if "XX:G1MixedGCCountTarget=4" not in flags:
-                        embed_var.add_field(name="❌ Outdated Flags",
-                                            value="Add `-XX:G1MixedGCCountTarget=4` to flags.")
+                        embed_var.add_field(name="❌ Eski Bayrak Kullanımı",
+                                            value="Bayraklarınıza `-XX:G1MixedGCCountTarget=4` ekleyin.")
                     jvm_version = request["timingsMaster"]["system"]["jvmversion"]
                     if "-XX:+UseG1GC" not in flags and jvm_version.startswith("1.8."):
                         embed_var.add_field(name="❌ Aikar's Flags",
-                                            value="You must use G1GC when using Aikar's flags.")
+                                            value="Aikar's Flags kullanırkan G1GC kullanmalısın.")
                     if "-Xmx" in flags:
                         max_mem = 0
                         flaglist = flags.split(" ")
@@ -149,8 +149,8 @@ class Timings(commands.Cog):
                                 max_mem = max_mem.replace("g", "000")
                                 max_mem = max_mem.replace("m", "")
                         if int(max_mem) < 5400:
-                            embed_var.add_field(name="❌ Low Memory",
-                                                value="Allocate at least 6-10GB of ram to your server if you can afford it.")
+                            embed_var.add_field(name="❌ Düşük Ram",
+                                                value="Karşılayabiliyorsanız, sunucunuza 6-8GB arası ram tanımlayın.")
                         index = 0
                         max_online_players = 0
                         while index < len(request["timingsMaster"]["data"]):
@@ -162,8 +162,8 @@ class Timings(commands.Cog):
                             max_online_players = max(players, max_online_players)
                             index = index + 1
                         if 1000 * max_online_players / int(max_mem) > 6 and int(max_mem) < 10000:
-                            embed_var.add_field(name="❌ Low memory",
-                                                value="You should be using more RAM with this many players.")
+                            embed_var.add_field(name="❌ Düşük Ram",
+                                                value="Bu kadar oyuncuyla daha fazla ram kullanmalısın.")
                         if "-Xms" in flags:
                             min_mem = 0
                             flaglist = flags.split(" ")
@@ -176,24 +176,24 @@ class Timings(commands.Cog):
                                     min_mem = min_mem.replace("m", "")
                             if min_mem != max_mem:
                                 embed_var.add_field(name="❌ Aikar's Flags",
-                                                    value="Your Xmx and Xms values should be equivalent when using Aikar's flags.")
+                                                    value="Aikar's Flags kullanırken XMX ve XMS değerleriniz eşit olmalı.")
                 elif "-Dusing.aikars.flags=mcflags.emc.gs" in flags:
-                    embed_var.add_field(name="❌ Outdated Flags",
-                                        value="Update [Aikar's flags](https://aikar.co/2018/07/02/tuning-the-jvm-g1gc-garbage-collector-flags-for-minecraft/).")
+                    embed_var.add_field(name="❌ Eski Bayrak Kullanımı",
+                                        value="Güncel versiyon [Aikar's flags](https://aikar.co/2018/07/02/tuning-the-jvm-g1gc-garbage-collector-flags-for-minecraft/).")
                 else:
                     embed_var.add_field(name="❌ Aikar's Flags",
-                                        value="Use [Aikar's flags](https://aikar.co/2018/07/02/tuning-the-jvm-g1gc-garbage-collector-flags-for-minecraft/).")
+                                        value="Aikar's Flags kullanın. [Aikar's flags](https://aikar.co/2018/07/02/tuning-the-jvm-g1gc-garbage-collector-flags-for-minecraft/).")
             except KeyError as key:
                 logging.info("Missing: " + str(key))
 
             try:
                 cpu = int(request["timingsMaster"]["system"]["cpu"])
                 if cpu == 1:
-                    embed_var.add_field(name="❌ Threads",
-                                        value=f"You have only {cpu} thread. Find a better host.")
+                    embed_var.add_field(name="❌ Çekirdek",
+                                        value=f"Sadece {cpu} işlemci çekirdeğin bulunuyor. Daha iyi bir makine almalısın.")
                 if cpu == 2:
-                    embed_var.add_field(name="❌ Threads",
-                                        value=f"You have only {cpu} threads. Find a better host.")
+                    embed_var.add_field(name="❌ Çekirdek",
+                                        value=f"Sadece {cpu} işlemci çekirdeğin bulunuyor. Daha iyi bir makine almalısın.")
             except KeyError as key:
                 logging.info("Missing: " + str(key))
 
@@ -204,7 +204,7 @@ class Timings(commands.Cog):
                     if handler_name.startswith("Command Function - ") and handler_name.endswith(":tick"):
                         handler_name = handler_name.split("Command Function - ")[1].split(":tick")[0]
                         embed_var.add_field(name=f"❌ {handler_name}",
-                                            value=f"This datapack uses command functions which are laggy.")
+                                            value=f"Bu DataPack komut özelliklerini kullanıyor, lag yaptığından önerilmez.")
             except KeyError as key:
                 logging.info("Missing: " + str(key))
 
@@ -237,7 +237,7 @@ class Timings(commands.Cog):
                             eval_field(embed_var, option, option_name, plugins, server_properties, bukkit,
                                        spigot, paper, tuinity, purpur)
             else:
-                embed_var.add_field(name="Error loading YAML file",
+                embed_var.add_field(name="YAML dosyasını yüklerken bir hata oluştu",
                                     value=YAML_ERROR)
 
             try:
@@ -246,14 +246,14 @@ class Timings(commands.Cog):
                     if authors is not None and "songoda" in request["timingsMaster"]["plugins"][plugin]["authors"].casefold():
                         if plugin == "EpicHeads":
                             embed_var.add_field(name="❌ EpicHeads",
-                                                value="This plugin was made by Songoda. Songoda resources are poorly developed and often cause problems. You should find an alternative such as [HeadsPlus](https://spigotmc.org/resources/headsplus-»-1-8-1-16-4.40265/) or [HeadDatabase](https://www.spigotmc.org/resources/head-database.14280/).")
+                                                value="Songoda pluginleri özensiz kodlanmış ve lag'a neden oluyorlar. Bu eklentileri deneyebilirsin [HeadsPlus](https://spigotmc.org/resources/headsplus-»-1-8-1-16-4.40265/) ya da [HeadDatabase](https://www.spigotmc.org/resources/head-database.14280/).")
                         elif plugin == "UltimateStacker":
                             embed_var.add_field(name="❌ UltimateStacker",
-                                                value="Stacking plugins actually causes more lag. "
-                                                      "Remove UltimateStacker.")
+                                                value="Stackleme pluginleri daha çok lag'a neden oluyor. "
+                                                      "UltimateStacker eklentisini kaldır.")
                         else:
                             embed_var.add_field(name="❌ " + plugin,
-                                                value="This plugin was made by Songoda. Songoda resources are poorly developed and often cause problems. You should find an alternative.")
+                                                value="Songoda pluginleri özensiz kodlanmış ve lag'a neden oluyorlar. Başka bir eklenti bulabilirsin.")
             except KeyError as key:
                 logging.info("Missing: " + str(key))
 
@@ -267,12 +267,12 @@ class Timings(commands.Cog):
                         if ntvd <= tvd and tvd >= 5:
                             if spigot["world-settings"]["default"]["view-distance"] == "default":
                                 embed_var.add_field(name="❌ no-tick-view-distance",
-                                                    value=f"Set in [paper.yml](http://bit.ly/paperconf). Recommended: {tvd}. "
-                                                          f"And reduce view-distance from default ({tvd}) in [spigot.yml](http://bit.ly/spiconf). Recommended: 4.")
+                                                    value=f"[paper.yml](http://bit.ly/paperconf) Değerini düzenleyin. Önerilen: {tvd}. "
+                                                          f"And reduce view-distance from default ({tvd}) in [spigot.yml](http://bit.ly/spiconf). Önerilen: 4.")
                             else:
                                 embed_var.add_field(name="❌ no-tick-view-distance",
-                                                    value=f"Set in [paper.yml](http://bit.ly/paperconf). Recommended: {tvd}. "
-                                                          f"And reduce view-distance from {tvd} in [spigot.yml](http://bit.ly/spiconf). Recommended: 4.")
+                                                    value=f"[paper.yml](http://bit.ly/paperconf) Değerini düzenleyin. Önerilen: {tvd}. "
+                                                          f"ayrıca view-distance değerini ({tvd}) değiştirin [spigot.yml](http://bit.ly/spiconf). Önerilen: 4.")
                             break
             except KeyError as key:
                 logging.info("Missing: " + str(key))
@@ -301,24 +301,24 @@ class Timings(commands.Cog):
 
         except ValueError as value_error:
             logging.info(value_error)
-            embed_var.add_field(name="❗ Value Error",
+            embed_var.add_field(name="❗ Değer Hatası",
                                 value=value_error)
 
         if len(embed_var.fields) == 0:
-            embed_var.add_field(name="✅ All good",
-                                value="Analyzed with no issues")
+            embed_var.add_field(name="✅ Mükemmel!",
+                                value="Herhangi bir sorun bulamadım")
             await message.reply(embed=embed_var)
             return
 
         issue_count = len(embed_var.fields)
         field_at_index = 24
         if issue_count >= 25:
-            embed_var.insert_field_at(index=24, name=f"Plus {issue_count - 24} more recommendations",
-                                      value="Create a new timings report after resolving some of the above issues to see more.")
+            embed_var.insert_field_at(index=24, name=f"+{issue_count - 24} daha fazla öneri",
+                                      value="Yukarıdaki önerileri çözdükten sonra yeni bir Timings oluşturun ve kalan önerileri görün.")
         while len(embed_var) > 6000:
             embed_var.insert_field_at(index=field_at_index,
-                                      name=f"Plus {issue_count - field_at_index} more recommendations",
-                                      value="Create a new timings report after resolving some of the above issues to see more.")
+                                      name=f"+{issue_count - field_at_index} daha fazla öneri",
+                                      value="Yukarıdaki önerileri çözdükten sonra yeni bir Timings oluşturun ve kalan önerileri görün.")
             del embed_var._fields[(field_at_index + 1):]
             field_at_index -= 1
         await message.reply(embed=embed_var)
@@ -344,12 +344,12 @@ def eval_field(embed_var, option, option_name, plugins, server_properties, bukki
                 except ValueError as value_error:
                     add_to_field = False
                     logging.info(value_error)
-                    embed_var.add_field(name="❗ Value Error",
+                    embed_var.add_field(name="❗ Değer Hatası",
                                         value=f'`{value_error}`\nexpression:\n`{expression}`\noption:\n`{option_name}`')
                 except TypeError as type_error:
                     add_to_field = False
                     logging.info(type_error)
-                    embed_var.add_field(name="❗ Type Error",
+                    embed_var.add_field(name="❗ Tür Hatası",
                                         value=f'`{type_error}`\nexpression:\n`{expression}`\noption:\n`{option_name}`')
             for config_name in dict_of_vars:
                 if config_name in option_data["value"] and not dict_of_vars[config_name]:

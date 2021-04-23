@@ -10,131 +10,131 @@ servers:
 - name: "Yatopia"
   prefix: "❌"
   value: |-
-    Yatopia is prone to bugs.
-    Consider using [Paper](https://papermc.io/downloads).
+    Yatpoia stabil bir fork değil.
+    [Paper](https://papermc.io/downloads) kullanmayı dene.
 plugins:
   paper:
     ClearLag:
       prefix: "❌"
       value: |-
-        This plugin causes more lag than it prevents.
+        Bu plugin çözdüğünden daha çok lag'a neden oluyor.
     LagAssist:
       prefix: "❌"
       value: |-
-        LagAssist should only be used for analytics and preventative measures.
-        All other features of the plugin should be disabled.
+        LagAssist yalnızca analiz etmek ve önleyici tedbirler için kullanılmalıdır.
+        Eklentinin diğer tüm özellikleri devre dışı bırakılmalıdır.
     NoChunkLag:
       prefix: "❌"
       value: |-
-        This plugin causes more lag than it prevents.
+        Bu plugin çözdüğünden daha çok lag'a neden oluyor.
     NoMobLag:
       prefix: "❌"
       value: |-
-        This plugin causes more lag than it prevents.
+        Bu plugin çözdüğünden daha çok lag'a neden oluyor.
     ServerBooster:
       prefix: "❌"
       value: |-
-        This plugin causes more lag than it prevents.
+        Bu plugin çözdüğünden daha çok lag'a neden oluyor.
     AntiLag:
       prefix: "❌"
       value: |-
-        This plugin causes more lag than it prevents.
+        Bu plugin çözdüğünden daha çok lag'a neden oluyor.
     BookLimiter:
       prefix: "❌"
       value: |-
-        You don't need BookLimiter as Paper already fixes all crash bugs.
+        Paper bütün crash buglarını fixlediğinden BookLimiter'a ihtiyacın yok.
     LimitPillagers:
       prefix: "❌"
       value: |-
-        You probably don't need LimitPillagers as Paper already adds its features. 
+        Paper zaten böyle bir özellik sunduğundan bu eklentiye ihtiyacın yok. 
     VillagerOptimiser:
       prefix: "❌"
       value: |-
-        You probably don't need VillagerOptimiser as Paper already adds its features. 
-        See entity-activation-range in spigot.yml.
+        Paper zaten böyle bir özellik sunduğundan bu eklentiye ihtiyacın yok. 
+        spigot.yml dosyasında entity-activation-range kısmına bakabilirsin.
     StackMob:
       prefix: "❌"
       value: |-
-        Stacking mobs causes more lag.
+        Mobları stacklemek daha çok lag'a neden oluyor.
     Stacker:
       prefix: "❌"
       value: |-
-        Stacking mobs causes more lag.
+        Mobları stacklemek daha çok lag'a neden oluyor.
     MobStacker:
       prefix: "❌"
       value: |-
-        Stacking mobs causes more lag.
+        Mobları stacklemek daha çok lag'a neden oluyor.
     WildStacker:
       prefix: "❌"
       value: |-
-        Stacking mobs causes more lag.
+        Mobları stacklemek daha çok lag'a neden oluyor.
     FastAsyncWorldEdit:
       prefix: "❌"
       value: |-
-        FAWE can be unstable. Make sure you know what you are doing in a production environment.
-        Consider replacing FAWE with [Worldedit](https://enginehub.org/worldedit/#downloads).
+        FAWE stabil değil ve bir çok açığı ortaya çıkabiliyor.
+        FAWE yerine [Worldedit](https://enginehub.org/worldedit/#downloads) kullanın.
     IllegalStack:
       prefix: "❌"
       value: |-
-        You probably don't need IllegalStack as Paper already fixes all dupe and crash bugs.
+        Paper bütün crash buglarını ve dupe buglarını fixlediğinden IllegalStack'e ihtiyacın yok.
     ExploitFixer:
       prefix: "❌"
       value: |-
-        You probably don't need ExploitFixer as Paper already fixes all dupe and crash bugs.
+        Paper bütün crash buglarını ve dupe buglarını fixlediğinden ExploitFixer'a ihtiyacın yok.
     EntityTrackerFixer:
       prefix: "❌"
       value: |-
-        You don't need EntityTrackerFixer as Paper already has its features.
+        Paper zaten bu özelliğe sahip olduğundan bu eklentiyi kullanmana gerek yok.
     Orebfuscator:
       prefix: "❌"
       value: |-
-        You don't need Orebfuscator as [Paper](https://gist.github.com/stonar96/ba18568bd91e5afd590e8038d14e245e) already has its features.
+        Paperda çok daha performanslı bir hali bulunuyor, [Paper](https://gist.github.com/stonar96/ba18568bd91e5afd590e8038d14e245e) Anti-Xray özelliğini kullanın.
     GroupManager:
       prefix: "❌"
       value: |-
-        GroupManager is an outdated permission plugin. 
-        Consider replacing it with [LuckPerms](https://luckperms.net/download).
+        GroupManager eski bir permission eklentisi. 
+        Onun yerine [LuckPerms](https://luckperms.net/download) tercih edebilirsin.
     PermissionsEx:
       prefix: "❌"
       value: |-
-        PermissionsEx is an outdated permission plugin. 
-        Consider replacing it with [LuckPerms](https://luckperms.net/download).
+        PermissionsEx eski bir permission eklentisi. 
+        Onun yerine [LuckPerms](https://luckperms.net/download) tercih edebilirsin.
     bPermissions:
       prefix: "❌"
       value: |-
-        bPermissions is an outdated permission plugin. 
-        Consider replacing it with [LuckPerms](https://luckperms.net/download).
+        bPermissions eski bir permission eklentisi. 
+        Onun yerine [LuckPerms](https://luckperms.net/download) tercih edebilirsin.
     PhantomSMP:
     - expressions:
       - paper["world-settings"]["default"]["phantoms-only-attack-insomniacs"] == "false"
       prefix: "❌"
       value: |-
-        You probably don't need PhantomSMP as Paper already has its features.
+        Paper zaten bu özelliğe sahip olduğundan bu eklentiyi kullanmana gerek yok.
     - expressions:
       - paper["world-settings"]["default"]["phantoms-only-attack-insomniacs"] == "true"
       prefix: "❌"
       value: |-
-        You probably don't need PhantomSMP as Paper already has its features.
+        Paper zaten bu özelliğe sahip olduğundan bu eklentiyi kullanmana gerek yok.
         Enable phantoms-only-attack-insomniacs in [paper.yml](http://bit.ly/paperconf).
   tuinity:
     PacketLimiter:
       prefix: "❌"
       value: |-
-        You don't need PacketLimiter as Tuinity already has its features.
+        Tuinity zaten bu özelliğe sahip olduğundan bu eklentiyi kullanmana gerek yok.
   purpur:
     SilkSpawners:
       prefix: "❌"
       value: |-
-        You probably don't need SilkSpawners as Purpur already has its features. 
+        Purpur zaten bu özelliğe sahip olduğundan bu eklentiyi kullanmana gerek yok. 
     MineableSpawners:
       prefix: "❌"
       value: |-
-        You probably don't need MineableSpawners as Purpur already has its features. 
+        Purpur zaten bu özelliğe sahip olduğundan bu eklentiyi kullanmana gerek yok. 
     VillagerLobotomizatornator:
       prefix: "❌"
       value: |-
-        You probably don't need VillagerLobotomizatornator as Purpur already adds its features. 
-        Enable villager.lobotomize.enabled in [purpur.yml](http://bit.ly/purpurc).
+        Purpur zaten bu özelliğe sahip olduğundan bu eklentiyi kullanmana gerek yok. 
+        villager.lobotomize.enabled kısmını aktifleştirin, [purpur.yml](http://bit.ly/purpurc).
 config:
   server.properties:
     online-mode:
@@ -143,244 +143,244 @@ config:
       - spigot["settings"]["bungeecord"] == "false"
       - paper["settings"]["velocity-support"]["online-mode"] == "false" or paper["settings"]["velocity-support"]["enabled"] == "false"
       prefix: "❌"
-      value: "Enable this in [server.properties](http://bit.ly/servprop) for security."
+      value: "[server.properties](http://bit.ly/servprop) dosyasında güvenlik için bunu aktifleştirin."
     network-compression-threshold:
     - expressions:
       - int(server_properties["network-compression-threshold"]) <= 256
       - spigot["settings"]["bungeecord"] == "false"
       prefix: "❌"
-      value: "Increase this in [server.properties](http://bit.ly/servprop). Recommended: 512."
+      value: "[server.properties](http://bit.ly/servprop) Dosyasında bu değeri yükseltin. Önerilen: 512."
   bukkit:
     chunk-gc.period-in-ticks:
     - expressions:
       - int(bukkit["chunk-gc"]["period-in-ticks"]) >= 600
       prefix: "❌"
-      value: "Decrease this in [bukkit.yml](https://bukkit.gamepedia.com/Bukkit.yml).\nRecommended: 400."
+      value: "[bukkit.yml](https://bukkit.gamepedia.com/Bukkit.yml) Dosyasında bu değeri azaltın\nÖnerilen: 400."
     ticks-per.monster-spawns:
     - expressions:
       - int(bukkit["ticks-per"]["monster-spawns"]) == 1
       prefix: "❌"
-      value: "Increase this in [bukkit.yml](https://bukkit.gamepedia.com/Bukkit.yml).\nRecommended: 4."
+      value: "[bukkit.yml](https://bukkit.gamepedia.com/Bukkit.yml) Dosyasında bu değeri arttırın\nÖnerilen: 4."
     spawn-limits.monsters:
     - expressions:
       - int(bukkit["spawn-limits"]["monsters"]) >= 70
       prefix: "❌"
-      value: "Decrease this in [bukkit.yml](https://bukkit.gamepedia.com/Bukkit.yml).\nRecommended: 15."
+      value: "[bukkit.yml](https://bukkit.gamepedia.com/Bukkit.yml) Dosyasında bu değeri azaltın\nÖnerilen: 15."
     spawn-limits.water-ambient:
     - expressions:
       - int(bukkit["spawn-limits"]["water-ambient"]) >= 20
       prefix: "❌"
-      value: "Decrease this in [bukkit.yml](https://bukkit.gamepedia.com/Bukkit.yml).\nRecommended: 5."
+      value: "[bukkit.yml](https://bukkit.gamepedia.com/Bukkit.yml) Dosyasında bu değeri azaltın\nÖnerilen: 5."
     spawn-limits.ambient:
     - expressions:
       - int(bukkit["spawn-limits"]["ambient"]) >= 15
       prefix: "❌"
-      value: "Decrease this in [bukkit.yml](https://bukkit.gamepedia.com/Bukkit.yml).\nRecommended: 1."
+      value: "[bukkit.yml](https://bukkit.gamepedia.com/Bukkit.yml) Dosyasında bu değeri azaltın\nÖnerilen: 1."
     spawn-limits.animals:
     - expressions:
       - int(bukkit["spawn-limits"]["animals"]) >= 10
       prefix: "❌"
-      value: "Decrease this in [bukkit.yml](https://bukkit.gamepedia.com/Bukkit.yml).\nRecommended: 5."
+      value: "[bukkit.yml](https://bukkit.gamepedia.com/Bukkit.yml) Dosyasında bu değeri azaltın\nÖnerilen: 5."
     spawn-limits.water-animals:
     - expressions:
       - int(bukkit["spawn-limits"]["water-animals"]) >= 15
       prefix: "❌"
-      value: "Decrease this in [bukkit.yml](https://bukkit.gamepedia.com/Bukkit.yml).\nRecommended: 5."
+      value: "[bukkit.yml](https://bukkit.gamepedia.com/Bukkit.yml) Dosyasında bu değeri azaltın\nÖnerilen: 5."
   spigot:
     view-distance:
     - expressions:
       - int(server_properties["view-distance"]) >= 10
       - spigot["world-settings"]["default"]["view-distance"] == "default"
       prefix: "❌"
-      value: "Decrease this from default (10) in [spigot.yml](http://bit.ly/spiconf).\nRecommended: 4."
+      value: "[spigot.yml](http://bit.ly/spiconf) Dosyasında bu değeri azaltın\nRÖnerilen: 4."
     entity-activation-range.animals:
     - expressions:
       - int(spigot["world-settings"]["default"]["entity-activation-range"]["animals"]) >= 32
       prefix: "❌"
-      value: "Decrease this in [spigot.yml](http://bit.ly/spiconf).\nRecommended: 16."
+      value: "[spigot.yml](http://bit.ly/spiconf) Dosyasında bu değeri azaltın\nÖnerilen: 16."
     entity-activation-range.monsters:
     - expressions:
       - int(spigot["world-settings"]["default"]["entity-activation-range"]["monsters"]) >= 32
       prefix: "❌"
-      value: "Decrease this in [spigot.yml](http://bit.ly/spiconf).\nRecommended: 16."
+      value: "[spigot.yml](http://bit.ly/spiconf) Dosyasında bu değeri azaltın\nÖnerilen: 16."
     entity-activation-range.misc:
     - expressions:
       - int(spigot["world-settings"]["default"]["entity-activation-range"]["misc"]) >= 16
       prefix: "❌"
-      value: "Decrease this in [spigot.yml](http://bit.ly/spiconf).\nRecommended: 12."
+      value: "[spigot.yml](http://bit.ly/spiconf) Dosyasında bu değeri azaltın\nÖnerilen: 12."
     entity-activation-range.water:
     - expressions:
       - int(spigot["world-settings"]["default"]["entity-activation-range"]["water"]) >= 16
       prefix: "❌"
-      value: "Decrease this in [spigot.yml](http://bit.ly/spiconf).\nRecommended: 12."
+      value: "[spigot.yml](http://bit.ly/spiconf) Dosyasında bu değeri azaltın\nÖnerilen: 12."
     entity-activation-range.villagers:
     - expressions:
       - int(spigot["world-settings"]["default"]["entity-activation-range"]["villagers"]) >= 32
       prefix: "❌"
-      value: "Decrease this in [spigot.yml](http://bit.ly/spiconf).\nRecommended: 16."
+      value: "[spigot.yml](http://bit.ly/spiconf) Dosyasında bu değeri azaltın\nÖnerilen: 16."
     entity-activation-range.tick-inactive-villagers:
     - expressions:
       - spigot["world-settings"]["default"]["entity-activation-range"]["tick-inactive-villagers"] == "true"
       prefix: "❌"
-      value: "Disable this in [spigot.yml](http://bit.ly/spiconf)."
+      value: "Bu özelliği devredışı bırakın, [spigot.yml](http://bit.ly/spiconf)."
     nerf-spawner-mobs:
     - expressions:
       - spigot["world-settings"]["default"]["nerf-spawner-mobs"] == "false"
       prefix: "❌"
-      value: "Enable this in [spigot.yml](http://bit.ly/spiconf)."
+      value: "Bu özelliği aktif hale getirin, [spigot.yml](http://bit.ly/spiconf)."
     entity-activation-range.wake-up-inactive.villagers-for:
     - expressions:
       - int(spigot["world-settings"]["default"]["entity-activation-range"]["wake-up-inactive"]["villagers-max-per-tick"]) >= 1
       - int(spigot["world-settings"]["default"]["entity-activation-range"]["wake-up-inactive"]["villagers-for"]) >= 100
       prefix: "❌"
-      value: "Decrease this in [spigot.yml](http://bit.ly/spiconf).\nRecommended: 20."
+      value: "[spigot.yml](http://bit.ly/spiconf) Dosyasında bu değeri azaltın\nÖnerilen: 20."
     entity-activation-range.wake-up-inactive.flying-monsters-for:
     - expressions:
       - int(spigot["world-settings"]["default"]["entity-activation-range"]["wake-up-inactive"]["flying-monsters-max-per-tick"]) >= 1
       - int(spigot["world-settings"]["default"]["entity-activation-range"]["wake-up-inactive"]["flying-monsters-for"]) >= 100
       prefix: "❌"
-      value: "Decrease this in [spigot.yml](http://bit.ly/spiconf).\nRecommended: 60."
+      value: "[spigot.yml](http://bit.ly/spiconf) Dosyasında bu değeri azaltın\nÖnerilen: 60."
     entity-activation-range.wake-up-inactive.villagers-max-per-tick:
     - expressions:
       - int(spigot["world-settings"]["default"]["entity-activation-range"]["wake-up-inactive"]["villagers-max-per-tick"]) >= 4
       prefix: "❌"
-      value: "Decrease this in [spigot.yml](http://bit.ly/spiconf).\nRecommended: 1."
+      value: "[spigot.yml](http://bit.ly/spiconf) Dosyasında bu değeri azaltın\nÖnerilen: 1."
     entity-activation-range.wake-up-inactive.animals-for:
     - expressions:
       - int(spigot["world-settings"]["default"]["entity-activation-range"]["wake-up-inactive"]["animals-max-per-tick"]) >= 1
       - int(spigot["world-settings"]["default"]["entity-activation-range"]["wake-up-inactive"]["animals-for"]) >= 100
       prefix: "❌"
-      value: "Decrease this in [spigot.yml](http://bit.ly/spiconf).\nRecommended: 40."
+      value: "[spigot.yml](http://bit.ly/spiconf) Dosyasında bu değeri azaltın\nÖnerilen: 40."
     entity-activation-range.wake-up-inactive.monsters-max-per-tick:
     - expressions:
       - int(spigot["world-settings"]["default"]["entity-activation-range"]["wake-up-inactive"]["monsters-max-per-tick"]) >= 8
       prefix: "❌"
-      value: "Decrease this in [spigot.yml](http://bit.ly/spiconf).\nRecommended: 4."
+      value: "[spigot.yml](http://bit.ly/spiconf) Dosyasında bu değeri azaltın\nÖnerilen: 4."
     entity-activation-range.wake-up-inactive.flying-monsters-max-per-tick:
     - expressions:
       - int(spigot["world-settings"]["default"]["entity-activation-range"]["wake-up-inactive"]["flying-monsters-max-per-tick"]) >= 8
       prefix: "❌"
-      value: "Decrease this in [spigot.yml](http://bit.ly/spiconf).\nRecommended: 1."
+      value: "[spigot.yml](http://bit.ly/spiconf) Dosyasında bu değeri azaltın\nÖnerilen: 1."
     entity-activation-range.wake-up-inactive.animals-max-per-tick:
     - expressions:
       - int(spigot["world-settings"]["default"]["entity-activation-range"]["wake-up-inactive"]["animals-max-per-tick"]) >= 4
       prefix: "❌"
-      value: "Decrease this in [spigot.yml](http://bit.ly/spiconf).\nRecommended: 2."
+      value: "[spigot.yml](http://bit.ly/spiconf) Dosyasında bu değeri azaltın\nÖnerilen: 2."
     entity-activation-range.wake-up-inactive.monsters-for:
     - expressions:
       - int(spigot["world-settings"]["default"]["entity-activation-range"]["wake-up-inactive"]["monsters-max-per-tick"]) >= 1
       - int(spigot["world-settings"]["default"]["entity-activation-range"]["wake-up-inactive"]["monsters-for"]) >= 100
       prefix: "❌"
-      value: "Decrease this in [spigot.yml](http://bit.ly/spiconf).\nRecommended: 60."
+      value: "[spigot.yml](http://bit.ly/spiconf) Dosyasında bu değeri azaltın\nÖnerilen: 60."
     arrow-despawn-rate:
     - expressions:
       - int(spigot["world-settings"]["default"]["arrow-despawn-rate"]) >= 1200
       prefix: "❌"
-      value: "Decrease this in [spigot.yml](http://bit.ly/spiconf).\nRecommended: 300."
+      value: "[spigot.yml](http://bit.ly/spiconf) Dosyasında bu değeri azaltın\nÖnerilen: 300."
     merge-radius.item:
     - expressions:
       - float(spigot["world-settings"]["default"]["merge-radius"]["item"]) <= 2.5
       prefix: "❌"
-      value: "Increase this in [spigot.yml](http://bit.ly/spiconf).\nRecommended: 4.0."
+      value: "[spigot.yml](http://bit.ly/spiconf) Dosyasında bu değeri arttırın\nÖnerilen: 4.0."
     merge-radius.exp:
     - expressions:
       - float(spigot["world-settings"]["default"]["merge-radius"]["exp"]) <= 3.0
       prefix: "❌"
-      value: "Increase this in [spigot.yml](http://bit.ly/spiconf).\nRecommended: 6.0."
+      value: "[spigot.yml](http://bit.ly/spiconf) Dosyasında bu değeri arttırın\nÖnerilen: 6.0."
     max-entity-collisions:
     - expressions:
       - int(spigot["world-settings"]["default"]["max-entity-collisions"]) >= 8
       prefix: "❌"
-      value: "Decrease this in [spigot.yml](http://bit.ly/spiconf).\nRecommended: 2."
+      value: "[spigot.yml](http://bit.ly/spiconf) Dosyasında bu değeri azaltın\nÖnerilen: 2."
     mob-spawn-range:
     - expressions:
       - spigot["world-settings"]["default"]["view-distance"] == "default"
       - int(spigot["world-settings"]["default"]["mob-spawn-range"]) >= 8
       - int(server_properties["view-distance"]) <= 6
       prefix: "❌"
-      value: "Decrease this in [spigot.yml](http://bit.ly/spiconf).\nRecommended: {int(server_properties[\"view-distance\"]) - 1}."
+      value: "[spigot.yml](http://bit.ly/spiconf) Dosyasında bu değeri azaltın\nÖnerilen: {int(server_properties[\"view-distance\"]) - 1}."
     - expressions:
       - int(spigot["world-settings"]["default"]["mob-spawn-range"]) >= 8
       - spigot["world-settings"]["default"]["view-distance"] != "default"
       - int(spigot["world-settings"]["default"]["view-distance"]) <= 6
       prefix: "❌"
-      value: "Decrease this in [spigot.yml](http://bit.ly/spiconf).\nRecommended: {int(spigot[\"world-settings\"][\"default\"][\"view-distance\"]) - 1}."
+      value: "[spigot.yml](http://bit.ly/spiconf) Dosyasında bu değeri azaltın\nÖnerilen: {int(spigot[\"world-settings\"][\"default\"][\"view-distance\"]) - 1}."
   paper:
     max-auto-save-chunks-per-tick:
     - expressions:
       - int(paper["world-settings"]["default"]["max-auto-save-chunks-per-tick"]) >= 24
       prefix: "❌"
-      value: "Decrease this in [paper.yml](http://bit.ly/paperconf).\nRecommended: 6."
+      value: "[paper.yml](http://bit.ly/paperconf) Dosyasında bu değeri azaltın\nÖnerilen: 6."
     optimize-explosions:
     - expressions:
       - paper["world-settings"]["default"]["optimize-explosions"] == "false"
       prefix: "❌"
-      value: "Enable this in [paper.yml](http://bit.ly/paperconf)."
+      value: "[paper.yml](http://bit.ly/paperconf) Dosyasında bunu aktifleştirin"
     mob-spawner-tick-rate:
     - expressions:
       - int(paper["world-settings"]["default"]["mob-spawner-tick-rate"]) == 1
       prefix: "❌"
-      value: "Increase this in [paper.yml](http://bit.ly/paperconf).\nRecommended: 2."
+      value: "[paper.yml](http://bit.ly/paperconf) Dosyasında bu değeri arttırın\nÖnerilen: 2."
     game-mechanics.disable-chest-cat-detection:
     - expressions:
       - paper["world-settings"]["default"]["game-mechanics"]["disable-chest-cat-detection"] == "false"
       prefix: "❌"
-      value: "Enable this in [paper.yml](http://bit.ly/paperconf)"
+      value: "[paper.yml](http://bit.ly/paperconf) Dosyasında bunu aktifleştirin"
     container-update-tick-rate:
     - expressions:
       - int(paper["world-settings"]["default"]["container-update-tick-rate"]) == 1
       prefix: "❌"
-      value: "Increase this in [paper.yml](http://bit.ly/paperconf).\nRecommended: 3."
+      value: "[paper.yml](http://bit.ly/paperconf) Dosyasında bu değeri arttırın\nÖnerilen: 3."
     grass-spread-tick-rate:
     - expressions:
       - int(paper["world-settings"]["default"]["grass-spread-tick-rate"]) == 1
       prefix: "❌"
-      value: "Increase this in [paper.yml](http://bit.ly/paperconf).\nRecommended: 4."
+      value: "[paper.yml](http://bit.ly/paperconf) Dosyasında bu değeri arttırın\nÖnerilen: 4."
     despawn-ranges.soft:
     - expressions:
       - int(paper["world-settings"]["default"]["despawn-ranges"]["soft"]) >= 32
       prefix: "❌"
-      value: "Decrease this in [paper.yml](http://bit.ly/paperconf).\nRecommended: 28."
+      value: "[paper.yml](http://bit.ly/paperconf) Dosyasında bu değeri azaltın\nÖnerilen: 28."
     despawn-ranges.hard:
     - expressions:
       - int(paper["world-settings"]["default"]["despawn-ranges"]["hard"]) >= 128
       prefix: "❌"
-      value: "Decrease this in [paper.yml](http://bit.ly/paperconf).\nRecommended: 96."
+      value: "[paper.yml](http://bit.ly/paperconf) Dosyasında bu değeri azaltın\nÖnerilen: 96."
     hopper.disable-move-event:
     - expressions:
       - paper["world-settings"]["default"]["hopper"]["disable-move-event"] == "false"
       prefix: "❌"
-      value: "Enable this in [paper.yml](http://bit.ly/paperconf)"
+      value: "[paper.yml](http://bit.ly/paperconf) Dosyasında bunu aktifleştirin"
     non-player-arrow-despawn-rate:
     - expressions:
       - int(paper["world-settings"]["default"]["non-player-arrow-despawn-rate"]) == -1
       prefix: "❌"
-      value: "Set a value in [paper.yml](http://bit.ly/paperconf).\nRecommended: 60"
+      value: "[paper.yml](http://bit.ly/paperconf) Dosyasında bu değeri düzenleyin\nÖnerilen: 60"
     creative-arrow-despawn-rate:
     - expressions:
       - int(paper["world-settings"]["default"]["creative-arrow-despawn-rate"]) == -1
       prefix: "❌"
-      value: "Set a value in [paper.yml](http://bit.ly/paperconf).\nRecommended: 60"
+      value: "[paper.yml](http://bit.ly/paperconf) Dosyasında bu değeri düzenleyin\nÖnerilen: 60"
     prevent-moving-into-unloaded-chunks:
     - expressions:
       - paper["world-settings"]["default"]["prevent-moving-into-unloaded-chunks"] == "false"
       prefix: "❌"
-      value: "Enable this in [paper.yml](http://bit.ly/paperconf)."
+      value: "[paper.yml](http://bit.ly/paperconf) Dosyasında bunu aktifleştirin"
     use-faster-eigencraft-redstone:
     - expressions:
       - paper["world-settings"]["default"]["use-faster-eigencraft-redstone"] == "false"
       prefix: "❌"
-      value: "Enable this in [paper.yml](http://bit.ly/paperconf)."
+      value: "[paper.yml](http://bit.ly/paperconf) Dosyasında bunu aktifleştirin"
     fix-climbing-bypassing-cramming-rule:
     - expressions:
       - paper["world-settings"]["default"]["fix-climbing-bypassing-cramming-rule"] == "false"
       prefix: "❌"
-      value: "Enable this in [paper.yml](http://bit.ly/paperconf)."
+      value: "[paper.yml](http://bit.ly/paperconf) Dosyasında bunu aktifleştirin"
     armor-stands-do-collision-entity-lookups:
     - expressions:
       - paper["world-settings"]["default"]["armor-stands-do-collision-entity-lookups"] == "true"
       prefix: "❌"
-      value: "Disable this in [paper.yml](http://bit.ly/paperconf)."
+      value: "[paper.yml](http://bit.ly/paperconf) Dosyasında bunu devre dışı bırakın"
     armor-stands-tick:
     - expressions:
       - paper["world-settings"]["default"]["armor-stands-tick"] == "true"
@@ -390,76 +390,76 @@ config:
       - '"BlockBalls" not in plugins'
       - '"ArmorStandTools" not in plugins'
       prefix: "❌"
-      value: "Disable this in [paper.yml](http://bit.ly/paperconf)."
+      value: "[paper.yml](http://bit.ly/paperconf) Dosyasında bunu devre dışı bırakın"
     per-player-mob-spawns:
     - expressions:
       - paper["world-settings"]["default"]["per-player-mob-spawns"] == "false"
       prefix: "❌"
-      value: "Enable this in [paper.yml](http://bit.ly/paperconf)."
+      value: "[paper.yml](http://bit.ly/paperconf) Dosyasında bunu aktifleştirin"
     alt-item-despawn-rate.enabled:
     - expressions:
       - paper["world-settings"]["default"]["alt-item-despawn-rate"]["enabled"] == "false"
       prefix: "❌"
-      value: "Enable this in [paper.yml](http://bit.ly/paperconf)."
+      value: "[paper.yml](http://bit.ly/paperconf) Dosyasında bunu aktifleştirin"
     entity-per-chunk-save-limit.experience_orb:
     - expressions:
       - int(paper["world-settings"]["default"]["entity-per-chunk-save-limit"]["experience_orb"]) == -1
       prefix: "❌"
-      value: "Set a value in [paper.yml](https://github.com/PaperMC/Paper/pull/4792). Recommended: 16."
+      value: "[paper.yml](https://github.com/PaperMC/Paper/pull/4792) Dosyasında bu değeri düzenleyin. Önerilen: 16."
     entity-per-chunk-save-limit.snowball:
     - expressions:
       - int(paper["world-settings"]["default"]["entity-per-chunk-save-limit"]["snowball"]) == -1
       prefix: "❌"
-      value: "Set a value in [paper.yml](https://github.com/PaperMC/Paper/pull/4792). Recommended: 16."
+      value: "[paper.yml](https://github.com/PaperMC/Paper/pull/4792) Dosyasında bu değeri düzenleyin. Önerilen: 16."
     entity-per-chunk-save-limit.ender_pearl:
     - expressions:
       - int(paper["world-settings"]["default"]["entity-per-chunk-save-limit"]["ender_pearl"]) == -1
       prefix: "❌"
-      value: "Set a value in [paper.yml](https://github.com/PaperMC/Paper/pull/4792). Recommended: 16."
+      value: "[paper.yml](https://github.com/PaperMC/Paper/pull/4792) Dosyasında bu değeri düzenleyin. Önerilen: 16."
     entity-per-chunk-save-limit.arrow:
     - expressions:
       - int(paper["world-settings"]["default"]["entity-per-chunk-save-limit"]["arrow"]) == -1
       prefix: "❌"
-      value: "Set a value in [paper.yml](https://github.com/PaperMC/Paper/pull/4792). Recommended: 16."
+      value: "[paper.yml](https://github.com/PaperMC/Paper/pull/4792) Dosyasında bu değeri düzenleyin. Önerilen: 16."
   purpur:
     settings.use-alternate-keepalive:
     - expressions:
       - purpur["settings"]["use-alternate-keepalive"] == "false"
       - '"TCPShield" not in plugins'
       prefix: "❌"
-      value: "Enable this in [purpur.yml](http://bit.ly/purpurc)."
+      value: "[purpur.yml](http://bit.ly/purpurc) Dosyasında bunu aktifleştirin"
     - expressions:
       - purpur["settings"]["use-alternate-keepalive"] == "true"
       - '"TCPShield" in plugins'
       prefix: "❌"
-      value: "Disable this in [purpur.yml](http://bit.ly/purpurc). It can cause issues with TCPShield"
+      value: "[purpur.yml](http://bit.ly/purpurc) Dosyasında bunu devre dışı bırakın It can cause issues with TCPShield"
     settings.dont-send-useless-entity-packets:
     - expressions:
       - purpur["settings"]["dont-send-useless-entity-packets"] == "false"
       prefix: "❌"
-      value: "Enable this in [purpur.yml](http://bit.ly/purpurc)."
+      value: "[purpur.yml](http://bit.ly/purpurc) Dosyasında bunu aktifleştirin"
     mobs.villager.brain-ticks:
     - expressions:
       - int(purpur["world-settings"]["default"]["mobs"]["villager"]["brain-ticks"]) == 1
       prefix: "❌"
-      value: "Increase this in [purpur.yml](http://bit.ly/purpurc).\nRecommended: 4."
+      value: "[purpur.yml](http://bit.ly/purpurc) Dosyasında bunu arttırın\nÖnerilen: 4."
     mobs.villager.spawn-iron-golem.radius:
     - expressions:
       - int(purpur["world-settings"]["default"]["mobs"]["villager"]["spawn-iron-golem"]["radius"]) == 0
       prefix: "❌"
-      value: "Increase this in [purpur.yml](http://bit.ly/purpurc).\nRecommended: 5."
+      value: "[purpur.yml](http://bit.ly/purpurc) Dosyasında bunu arttırın\nÖnerilen: 5."
     mobs.zombie.aggressive-towards-villager-when-lagging:
     - expressions:
       - purpur["world-settings"]["default"]["mobs"]["zombie"]["aggressive-towards-villager-when-lagging"] == "true"
       prefix: "❌"
-      value: "Disable this in [purpur.yml](http://bit.ly/purpurc)."
+      value: "[purpur.yml](http://bit.ly/purpurc) Dosyasında bunu devre dışı bırakın"
     mobs.villager.lobotomize.enabled:
     - expressions:
       - purpur["world-settings"]["default"]["mobs"]["villager"]["lobotomize"]["enabled"] == "false"
       prefix: "❌"
-      value: "Enable this in [purpur.yml](http://bit.ly/purpurc)."
+      value: "[purpur.yml](http://bit.ly/purpurc) Dosyasında bunu aktifleştirin"
     gameplay-mechanics.player.teleport-if-outside-border:
     - expressions:
       - purpur["world-settings"]["default"]["gameplay-mechanics"]["player"]["teleport-if-outside-border"] == "false"
       prefix: "❌"
-      value: "Enable this in [purpur.yml](http://bit.ly/purpurc)."
+      value: "[purpur.yml](http://bit.ly/purpurc) Dosyasında bunu aktifleştirin"
