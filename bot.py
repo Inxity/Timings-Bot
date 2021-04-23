@@ -27,7 +27,7 @@ bot = commands.Bot(command_prefix=".", intents=discord.Intents.default(),
 
 load_dotenv()
 #token = os.getenv('token')
-token = "ODM1MTE3NDUwNTAwNTA1NjMw.YIKxuw.CcDXLj2JFGYWZmsfpIKslSzGBTM"
+token = "token"
 
 logging.basicConfig(filename='console.log',
                     level=logging.INFO,
