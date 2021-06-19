@@ -28,7 +28,7 @@ class Timings(commands.Cog):
         words = message.content.replace("\n", " ").split(" ")
         timings_url = ""
         embed_var = discord.Embed(title=self.TIMINGS_TITLE)
-        embed_var.set_footer(text=f"Unutma, bu değerler en düşük değerler. Kendiniz sunucunuza göre ayarlayabilirsiniz. Bu analizi isteyen kişi {message.author.name}#{message.author.discriminator}", icon_url=message.author.avatar_url)
+        embed_var.set_footer(text=f"Unutma, bu değerler en düşük değerler. Sunucuna göre bu değerleri arttırabilir veya düşürebilirsin. Bu analizi isteyen kişi: {message.author.name}#{message.author.discriminator}", icon_url=message.author.avatar_url)
 
         for word in words:
             if word.startswith("https://timin") and "/d=" in word:
@@ -40,7 +40,7 @@ class Timings(commands.Cog):
             if word.startswith("https://www.spigotmc.org/go/timings?url=") or word.startswith(
                     "https://timings.spigotmc.org/?url="):
                 embed_var.add_field(name="❌ Spigot",
-                                    value="Spigot Timings'i çok eski ve az detay içeriyor. Daha iyi bir Timings Analizi için[Paper](https://papermc.io/) kullan.")
+                                    value="Spigot Timings'i çok eski ve az detay içeriyor. Daha iyi bir Timings analizi için [Paper](https://papermc.io/) kullan.")
                 embed_var.url = word
                 await message.reply(embed=embed_var)
                 return
@@ -77,11 +77,11 @@ class Timings(commands.Cog):
                     if version_result:
                         if compare_versions(version_result, TIMINGS_CHECK["version"]) == -1:
                             version = version.replace("git-", "").replace("MC: ", "")
-                            embed_var.add_field(name="❌ Eski Versiyon",
-                                                value=f'Kullandığın versiyon: `{version}`. Lütfen şu versiyona yükseltin: `{TIMINGS_CHECK["version"]}`.')
+                            embed_var.add_field(name="❌ Eski Sürüm",
+                                                value=f'Kullandığın sürüm: `{version}`. Lütfen şu sürüme yükseltin: `{TIMINGS_CHECK["version"]}`.')
                     else:
                         embed_var.add_field(name="❗ Değer Hatası",
-                                            value=f'Versiyonu anlayamadım, özel bir sürüm mü? `{version}`')
+                                            value=f'Sürümünü bulamadım, özel bir sürüm mü? `{version}`')
                 if "servers" in TIMINGS_CHECK:
                     for server in TIMINGS_CHECK["servers"]:
                         if server["name"] in version:
@@ -94,7 +94,7 @@ class Timings(commands.Cog):
                 timing_cost = int(request["timingsMaster"]["system"]["timingcost"])
                 if timing_cost > 300:
                     embed_var.add_field(name="❌ Timingcost",
-                                        value=f"Timingcost'un {timing_cost}. CPU'n fazla yükleniyor veya yavaş. Daha iyi bir makineye geçebilirsin.")
+                                        value=f"Timingcost'un {timing_cost}. İşlemcin fazla yük altında ya da yavaş çalışıyor. Daha iyi bir makine tercih edebilirsin.")
             except KeyError as key:
                 logging.info("Missing: " + str(key))
 
@@ -102,7 +102,7 @@ class Timings(commands.Cog):
                 jvm_version = request["timingsMaster"]["system"]["jvmversion"]
                 if jvm_version.startswith("1.8.") or jvm_version.startswith("9.") or jvm_version.startswith("10."):
                     embed_var.add_field(name="❌ Java Sürümü",
-                                        value=f"Kullandığın Java Sürümü {jvm_version}. [Java 11](https://adoptopenjdk.net/installation.html) Sürümüne geçin.")
+                                        value=f"Kullandığın Java sürümü {jvm_version}. [Java 11](https://adoptopenjdk.net/installation.html) sürümüne geçin.")
             except KeyError as key:
                 logging.info("Missing: " + str(key))
 
@@ -113,7 +113,7 @@ class Timings(commands.Cog):
                     java_version = jvm_version.split(".")[0]
                     if int(java_version) < 14:
                         embed_var.add_field(name="❌ Java " + java_version,
-                                            value="ZGC Sadece Java 15'de kullanılmalı")
+                                            value="ZGC Sadece Java 15'de kullanılmalı.")
                     if "-Xmx" in flags:
                         max_mem = 0
                         flaglist = flags.split(" ")
@@ -126,7 +126,7 @@ class Timings(commands.Cog):
                                 max_mem = max_mem.replace("m", "")
                                 if int(max_mem) < 10000:
                                     embed_var.add_field(name="❌ Düşük Ram",
-                                                        value="ZGC sadece fazla ram ile düzgün çalışır")
+                                                        value="ZGC sadece fazla bellek ile düzgün çalışır.")
                 elif "-Daikars.new.flags=true" in flags:
                     if "-XX:+PerfDisableSharedMem" not in flags:
                         embed_var.add_field(name="❌ Eski Bayrak Kullanımı",
@@ -163,7 +163,7 @@ class Timings(commands.Cog):
                             index = index + 1
                         if 1000 * max_online_players / int(max_mem) > 6 and int(max_mem) < 10000:
                             embed_var.add_field(name="❌ Düşük Ram",
-                                                value="Bu kadar oyuncuyla daha fazla ram kullanmalısın.")
+                                                value="Sunucunda bulunan oyuncu sayısına göre tanımlanan bellek miktarı çok az, yükseltmelisin.")
                         if "-Xms" in flags:
                             min_mem = 0
                             flaglist = flags.split(" ")
@@ -190,10 +190,10 @@ class Timings(commands.Cog):
                 cpu = int(request["timingsMaster"]["system"]["cpu"])
                 if cpu == 1:
                     embed_var.add_field(name="❌ Çekirdek",
-                                        value=f"Sadece {cpu} işlemci çekirdeğin bulunuyor. Daha iyi bir makine almalısın.")
+                                        value=f"Sadece {cpu} işlemci çekirdeğin bulunuyor. Daha iyi bir makine tercih etmelisin.")
                 if cpu == 2:
                     embed_var.add_field(name="❌ Çekirdek",
-                                        value=f"Sadece {cpu} işlemci çekirdeğin bulunuyor. Daha iyi bir makine almalısın.")
+                                        value=f"Sadece {cpu} işlemci çekirdeğin bulunuyor. Daha iyi bir makine tercih etmelisin.")
             except KeyError as key:
                 logging.info("Missing: " + str(key))
 
@@ -204,7 +204,7 @@ class Timings(commands.Cog):
                     if handler_name.startswith("Command Function - ") and handler_name.endswith(":tick"):
                         handler_name = handler_name.split("Command Function - ")[1].split(":tick")[0]
                         embed_var.add_field(name=f"❌ {handler_name}",
-                                            value=f"Bu DataPack komut özelliklerini kullanıyor, lag yaptığından önerilmez.")
+                                            value=f"Bu DataPack lag yaptırabilecek özellikler bulunduruyor.")
             except KeyError as key:
                 logging.info("Missing: " + str(key))
 
@@ -246,7 +246,7 @@ class Timings(commands.Cog):
                     if authors is not None and "songoda" in request["timingsMaster"]["plugins"][plugin]["authors"].casefold():
                         if plugin == "EpicHeads":
                             embed_var.add_field(name="❌ EpicHeads",
-                                                value="Songoda pluginleri özensiz kodlanmış ve lag'a neden oluyorlar. Bu eklentileri deneyebilirsin [HeadsPlus](https://spigotmc.org/resources/headsplus-»-1-8-1-16-4.40265/) ya da [HeadDatabase](https://www.spigotmc.org/resources/head-database.14280/).")
+                                                value="Songoda pluginleri özensiz kodlanmış ve LAGG'a neden oluyorlar. Bu eklentileri deneyebilirsin: [HeadsPlus](https://spigotmc.org/resources/headsplus-»-1-8-1-16-4.40265/) ya da [HeadDatabase](https://www.spigotmc.org/resources/head-database.14280/).")
                         elif plugin == "UltimateStacker":
                             embed_var.add_field(name="❌ UltimateStacker",
                                                 value="Stackleme pluginleri daha çok lag'a neden oluyor. "
@@ -268,11 +268,11 @@ class Timings(commands.Cog):
                             if spigot["world-settings"]["default"]["view-distance"] == "default":
                                 embed_var.add_field(name="❌ no-tick-view-distance",
                                                     value=f"[paper.yml](http://bit.ly/paperconf) Değerini düzenleyin. Önerilen: {tvd}. "
-                                                          f"And reduce view-distance from default ({tvd}) in [spigot.yml](http://bit.ly/spiconf). Önerilen: 4.")
+                                                          f"Ayrıca view-distance değerini ({tvd}) [spigot.yml](http://bit.ly/spiconf) dosyasında düzenleyin. Önerilen: 4.")
                             else:
                                 embed_var.add_field(name="❌ no-tick-view-distance",
                                                     value=f"[paper.yml](http://bit.ly/paperconf) Değerini düzenleyin. Önerilen: {tvd}. "
-                                                          f"ayrıca view-distance değerini ({tvd}) değiştirin [spigot.yml](http://bit.ly/spiconf). Önerilen: 4.")
+                                                          f"Ayrıca view-distance değerini ({tvd}) [spigot.yml](http://bit.ly/spiconf) dosyasında düzenleyin. Önerilen: 4.")
                             break
             except KeyError as key:
                 logging.info("Missing: " + str(key))
@@ -320,14 +320,14 @@ class Timings(commands.Cog):
 
         if len(embed_var.fields) == 0:
             embed_var.add_field(name="✅ Mükemmel!",
-                                value="Herhangi bir sorun bulamadım")
+                                value="Herhangi bir sorun bulunamadı!")
             await message.reply(embed=embed_var)
             return
 
         issue_count = len(embed_var.fields)
         field_at_index = 24
         if issue_count >= 25:
-            embed_var.insert_field_at(index=24, name=f"+{issue_count - 24} daha fazla öneri",
+            embed_var.insert_field_at(index=24, name=f"+{issue_count - 24} öneri daha var.",
                                       value="Yukarıdaki önerileri çözdükten sonra yeni bir Timings oluşturun ve kalan önerileri görün.")
         while len(embed_var) > 6000:
             embed_var.insert_field_at(index=field_at_index,
