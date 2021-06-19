@@ -51,7 +51,7 @@ class Timings(commands.Cog):
             timings_url = timings_url.split("#")[0]
         if "?id=" not in timings_url:
             return
-        logging.info(timings_url)
+        logging.info(f'Bu analizi isteyen kişi {message.author} ({message.author.id}): {timings_url}')
 
         timings_host, timings_id = timings_url.split("?id=")
         timings_json = timings_host + "data.php?id=" + timings_id
@@ -278,6 +278,20 @@ class Timings(commands.Cog):
                 logging.info("Missing: " + str(key))
 
             try:
+                worlds = request_raw["worlds"]
+                high_mec = False
+                for world in worlds:
+                    max_entity_cramming = int(request_raw["worlds"][world]["gamerules"]["maxEntityCramming"])
+                    if max_entity_cramming >= 24:
+                        high_mec = True
+                if high_mec:
+                    embed_var.add_field(name="❌ maxEntityCramming",
+                                        value=f"/gamerule maxEntityCramming komutunu sunucunuzdaki bütün dünyalarda uygulayın. Önerilen: 8. ")
+            except KeyError as key:
+                logging.info("Missing: " + str(key))
+
+
+            try:
                 normal_ticks = request["timingsMaster"]["data"][0]["totalTicks"]
                 worst_tps = 20
                 for index in range(len(request["timingsMaster"]["data"])):
@@ -290,10 +304,10 @@ class Timings(commands.Cog):
                             worst_tps = tps
                 if worst_tps < 10:
                     red = 255
-                    green = int(205 * (0.1 * worst_tps))
+                    green = int(255 * (0.1 * worst_tps))
                 else:
-                    red = int(205 * (-0.1 * worst_tps + 2))
-                    green = 205
+                    red = int(255 * (-0.1 * worst_tps + 2))
+                    green = 255
                 color = int(red*256*256 + green*256)
                 embed_var.color = color
             except KeyError as key:

@@ -349,6 +349,12 @@ config:
     hopper.disable-move-event:
     - expressions:
       - paper["world-settings"]["default"]["hopper"]["disable-move-event"] == "false"
+      - '"ChestProtect" not in plugins'
+      - '"Lockette" not in plugins'
+      - '"BlockLocker" not in plugins'
+      - '"LockettePro" not in plugins'
+      - '"ChestProtect" not in plugins'
+      - '"LWC" not in plugins'
       prefix: "❌"
       value: "[paper.yml](http://bit.ly/paperconf) Dosyasında bunu aktifleştirin"
     non-player-arrow-despawn-rate:
@@ -389,6 +395,7 @@ config:
       - '"PetBlocks" not in plugins'
       - '"BlockBalls" not in plugins'
       - '"ArmorStandTools" not in plugins'
+      - '"VehiclesPlusPro" not in plugins'
       prefix: "❌"
       value: "[paper.yml](http://bit.ly/paperconf) Dosyasında bunu devre dışı bırakın"
     per-player-mob-spawns:
