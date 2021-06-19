@@ -1,4 +1,3 @@
----
 # raiders_entity_activation_range = int(spigot["world-settings"]["default"]["entity-activation-range"]["raiders"])
 # flying_monsters_entity_activation_range = int(spigot["world-settings"]["default"]["entity-activation-range"]["flying-monsters"])
 # wake_up_inactive_villagers_every = int(spigot["world-settings"]["default"]["entity-activation-range"]["wake-up-inactive"]["villagers-every"])
@@ -26,23 +25,23 @@ plugins:
     NoChunkLag:
       prefix: "❌"
       value: |-
-        Bu plugin çözdüğünden daha çok LAGG'a neden oluyor.
+        Bu plugin giderdiğinden daha çok LAGG'a neden oluyor.
     NoMobLag:
       prefix: "❌"
       value: |-
-        Bu plugin çözdüğünden daha çok LAGG'a neden oluyor.
+        Bu plugin giderdiğinden daha çok LAGG'a neden oluyor.
     ServerBooster:
       prefix: "❌"
       value: |-
-        Bu plugin çözdüğünden daha çok LAGG'a neden oluyor.
+        Bu plugin giderdiğinden daha çok LAGG'a neden oluyor.
     AntiLag:
       prefix: "❌"
       value: |-
-        Bu plugin çözdüğünden daha çok LAGG'a neden oluyor.
+        Bu plugin giderdiğinden daha çok LAGG'a neden oluyor.
     BookLimiter:
       prefix: "❌"
       value: |-
-        Paper crash ve bugları düzelttiğinden BookLimiter'a ihtiyacın yok.
+        Paper zaten crash, bug ve dupe hatalarını düzelttiğinden BookLimiter'a ihtiyacın yok.
     LimitPillagers:
       prefix: "❌"
       value: |-
@@ -325,7 +324,7 @@ config:
     - expressions:
       - paper["world-settings"]["default"]["game-mechanics"]["disable-chest-cat-detection"] == "false"
       prefix: "❌"
-      value: "[paper.yml](http://bit.ly/paperconf) dosyasında bunu aktifleştirin."
+      value: "[paper.yml](http://bit.ly/paperconf) dosyasında bu değeri aktifleştirin."
     container-update-tick-rate:
     - expressions:
       - int(paper["world-settings"]["default"]["container-update-tick-rate"]) == 1
@@ -371,22 +370,22 @@ config:
     - expressions:
       - paper["world-settings"]["default"]["prevent-moving-into-unloaded-chunks"] == "false"
       prefix: "❌"
-      value: "[paper.yml](http://bit.ly/paperconf) dosyasında bunu aktifleştirin."
+      value: "[paper.yml](http://bit.ly/paperconf) dosyasında bu değeri aktifleştirin."
     use-faster-eigencraft-redstone:
     - expressions:
       - paper["world-settings"]["default"]["use-faster-eigencraft-redstone"] == "false"
       prefix: "❌"
-      value: "[paper.yml](http://bit.ly/paperconf) dosyasında bunu aktifleştirin."
+      value: "[paper.yml](http://bit.ly/paperconf) dosyasında bu değeri aktifleştirin."
     fix-climbing-bypassing-cramming-rule:
     - expressions:
       - paper["world-settings"]["default"]["fix-climbing-bypassing-cramming-rule"] == "false"
       prefix: "❌"
-      value: "[paper.yml](http://bit.ly/paperconf) dosyasında bunu aktifleştirin."
+      value: "[paper.yml](http://bit.ly/paperconf) dosyasında bu değeri aktifleştirin."
     armor-stands-do-collision-entity-lookups:
     - expressions:
       - paper["world-settings"]["default"]["armor-stands-do-collision-entity-lookups"] == "true"
       prefix: "❌"
-      value: "[paper.yml](http://bit.ly/paperconf) dosyasında bunu devre dışı bırakın."
+      value: "[paper.yml](http://bit.ly/paperconf) dosyasında bu değeri devre dışı bırakın."
     armor-stands-tick:
     - expressions:
       - paper["world-settings"]["default"]["armor-stands-tick"] == "true"
@@ -402,7 +401,7 @@ config:
     - expressions:
       - paper["world-settings"]["default"]["per-player-mob-spawns"] == "false"
       prefix: "❌"
-      value: "[paper.yml](http://bit.ly/paperconf) dosyasında bunu aktifleştirin."
+      value: "[paper.yml](http://bit.ly/paperconf) dosyasında bu değeri aktifleştirin."
     alt-item-despawn-rate.enabled:
     - expressions:
       - paper["world-settings"]["default"]["alt-item-despawn-rate"]["enabled"] == "false"
@@ -444,29 +443,29 @@ config:
     - expressions:
       - purpur["settings"]["dont-send-useless-entity-packets"] == "false"
       prefix: "❌"
-      value: "[purpur.yml](http://bit.ly/purpurc) dosyasında bunu aktifleştirin."
+      value: "[purpur.yml](http://bit.ly/purpurc) dosyasında bu değeri aktifleştirin."
     mobs.villager.brain-ticks:
     - expressions:
       - int(purpur["world-settings"]["default"]["mobs"]["villager"]["brain-ticks"]) == 1
       prefix: "❌"
-      value: "[purpur.yml](http://bit.ly/purpurc) dosyasında bunu arttırın\nÖnerilen: 4."
+      value: "[purpur.yml](http://bit.ly/purpurc) dosyasında bu değeri arttırın\nÖnerilen: 4."
     mobs.villager.spawn-iron-golem.radius:
     - expressions:
       - int(purpur["world-settings"]["default"]["mobs"]["villager"]["spawn-iron-golem"]["radius"]) == 0
       prefix: "❌"
-      value: "[purpur.yml](http://bit.ly/purpurc) dosyasında bunu arttırın.\nÖnerilen: 5."
+      value: "[purpur.yml](http://bit.ly/purpurc) dosyasında bu değeri arttırın.\nÖnerilen: 5."
     mobs.zombie.aggressive-towards-villager-when-lagging:
     - expressions:
       - purpur["world-settings"]["default"]["mobs"]["zombie"]["aggressive-towards-villager-when-lagging"] == "true"
       prefix: "❌"
-      value: "[purpur.yml](http://bit.ly/purpurc) dosyasında bunu devre dışı bırakın."
+      value: "[purpur.yml](http://bit.ly/purpurc) dosyasında bu değeri devre dışı bırakın."
     mobs.villager.lobotomize.enabled:
     - expressions:
       - purpur["world-settings"]["default"]["mobs"]["villager"]["lobotomize"]["enabled"] == "false"
       prefix: "❌"
-      value: "[purpur.yml](http://bit.ly/purpurc) dosyasında bunu aktifleştirin."
+      value: "[purpur.yml](http://bit.ly/purpurc) dosyasında bu değeri aktifleştirin."
     gameplay-mechanics.player.teleport-if-outside-border:
     - expressions:
       - purpur["world-settings"]["default"]["gameplay-mechanics"]["player"]["teleport-if-outside-border"] == "false"
       prefix: "❌"
-      value: "[purpur.yml](http://bit.ly/purpurc) dosyasında bunu aktifleştirin."
+      value: "[purpur.yml](http://bit.ly/purpurc) dosyasında bu değeri aktifleştirin."
